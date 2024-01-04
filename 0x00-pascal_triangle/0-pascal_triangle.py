@@ -2,7 +2,7 @@
 """ Pascals Triangle """
 
 
-def pascal_triangle(n):
+def pascal_triangle(n: int) -> List[List[int]]:
     """ Pascal Triangle Implementation """
     if n <= 0:
         return []
