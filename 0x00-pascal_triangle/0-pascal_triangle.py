@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Pascals Triangle """
+from typing import List
 
 
 def pascal_triangle(n: int) -> List[List[int]]:
