@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ Pascals Triangle """
-from typing import List
 
 
-def pascal_triangle(n: int) -> List[List[int]]:
+def pascal_triangle(n):
     """ Pascal Triangle Implementation """
     if n <= 0:
         return []
