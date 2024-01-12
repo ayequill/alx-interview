@@ -1,19 +1,12 @@
 #!/usr/bin/python3
-""" Module for lockboxes """
+""" module for the functions canUnlockAll"""
 
 
 def canUnlockAll(boxes):
-    """ Function for lockboxes """
-    opened_boxes = {0}
-
-    queue = [0]
-
-    while queue:
-        current_box = queue.pop(0)
-
-        for key in boxes[current_box]:
-            if key not in opened_boxes:
-                opened_boxes.add(key)
-                queue.append(key)
-
+    """Check if it's possible to unlock all boxes in a given list of boxes"""
+    opened_boxes = [0]
+    for box in opened_boxes:
+        for key in boxes[box]:
+            if key not in opened_boxes and key < len(boxes):
+                opened_boxes.append(key)
     return len(opened_boxes) == len(boxes)
