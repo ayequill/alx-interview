@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" """
+""" Module for lockboxes """
 
 
 def canUnlockAll(boxes):
-    """ """
+    """ Function for lockboxes """
     opened_boxes = {0}
 
     queue = [0]
