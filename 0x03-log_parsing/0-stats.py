@@ -4,9 +4,10 @@ if __name__ == '__main__':
     from sys import stdin
 
     total_file_size = 0
-    codes = {}
+    codes: dict = {}
 
     line_counts = 0
+
 
     def help_print():
         """ Helper Function to print """
@@ -14,12 +15,14 @@ if __name__ == '__main__':
         for code, count in sorted(codes.items()):
             print(f"{code}: {count}")
 
+
     try:
         for line in stdin:
             try:
                 line_parts = line.split()
 
                 total_file_size += int(line_parts[-1])
+                # if line_parts[-2] in [200, 301, 400, 401, 403, 404, 405, 500]:
                 status = line_parts[-2]
 
                 if status in codes:
