@@ -4,7 +4,7 @@ if __name__ == '__main__':
     from sys import stdin
 
     total_file_size = 0
-    codes: dict = {}
+    codes = {}
 
     line_counts = 0
 
@@ -18,16 +18,17 @@ if __name__ == '__main__':
         for line in stdin:
             try:
                 line_parts = line.split()
+
                 total_file_size += int(line_parts[-1])
-                statuses = [200, 301, 400, 401, 403, 404, 405, 500]
-                status = int(line_parts[-2])
-                if status in statuses:
-                    if status in codes:
-                        codes[status] += 1
-                    else:
-                        codes[status] = 1
-                    line_counts += 1
-            except (ValueError, IndexError):
+                status = line_parts[-2]
+
+                if status in codes:
+                    codes[status] += 1
+                else:
+                    codes[status] = 1
+                line_counts += 1
+
+            except (ValueError, IndexError, TypeError):
                 continue
             else:
                 if line_counts % 10 == 0:
