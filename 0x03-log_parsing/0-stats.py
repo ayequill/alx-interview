@@ -33,5 +33,6 @@ if __name__ == '__main__':
             else:
                 if line_counts % 10 == 0:
                     help_print()
+        help_print()
     except KeyboardInterrupt:
         help_print()
