@@ -21,12 +21,13 @@ if __name__ == '__main__':
 
                 total_file_size += int(line_parts[-1])
                 status = line_parts[-2]
-
-                if status in codes:
-                    codes[status] += 1
-                else:
-                    codes[status] = 1
-                line_counts += 1
+                statuses = ["200", "301", "400", "401", "403", "404", "405", "500"]
+                if status in statuses:
+                    if status in codes:
+                        codes[status] += 1
+                    else:
+                        codes[status] = 1
+                    line_counts += 1
 
             except (ValueError, IndexError, KeyError, TypeError):
                 continue
