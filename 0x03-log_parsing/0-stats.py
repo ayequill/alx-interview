@@ -23,7 +23,6 @@ if __name__ == '__main__':
                 statuses = [200, 301, 400, 401, 403, 404, 405, 500]
                 status = int(line_parts[-2])
                 if status in statuses:
-
                     if status in codes:
                         codes[status] += 1
                     else:
